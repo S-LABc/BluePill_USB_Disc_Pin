@@ -1,0 +1,19 @@
+###################### USB Test ST-Link ########################################
+
+TEST_STLINK.name=USB Test (ST-Link)
+
+TEST_STLINK.build.variant=generic_stm32f103c
+TEST_STLINK.build.core=maple
+TEST_STLINK.build.ldscript=ld/jtag.ld
+TEST_STLINK.build.f_cpu=72000000L
+TEST_STLINK.build.board=GENERIC_STM32F103C
+TEST_STLINK.build.vect=VECT_TAB_ADDR=0x8000000
+TEST_STLINK.build.cpu_flags=-DMCU_STM32F103C8
+TEST_STLINK.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG
+#-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -DSERIAL_USB -DGENERIC_BOOTLOADER
+
+TEST_STLINK.upload.tool=stlink_upload
+TEST_STLINK.upload.protocol=STLink
+TEST_STLINK.upload.maximum_size=65536
+TEST_STLINK.upload.maximum_data_size=20480
+TEST_STLINK.upload.file_type=bin
